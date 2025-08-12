@@ -46,5 +46,31 @@ async def ban_us_adan(interaction: discord.Interaction):
 async def gnight_girl(interaction: discord.Interaction):
     await interaction.response.send_message("https://tenor.com/view/twomad-happy-laugh-fall-gif-14365056")
 
+
+
+
+
+
+from threading import Thread
+from flask import Flask, request
+
+app = Flask('')
+
+@app.route('/')
+def home():
+    print(f"Ping received from: {request.remote_addr}")
+    return "Hi nathan!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
+
+keep_alive()
+
+
+
 bot.run(TOKEN)
 
