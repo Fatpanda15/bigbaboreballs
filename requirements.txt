@@ -1,2 +1,2 @@
-bot.py
-.env
+discord.py
+python-dotenv
